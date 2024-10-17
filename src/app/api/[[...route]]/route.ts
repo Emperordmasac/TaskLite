@@ -7,7 +7,7 @@ import workspaces from '@/features/workspaces/server/route'
 
 const app = new Hono().basePath('/api')
 
-export const routes = app
+export const route = app
   .route("/auth", auth)
   .route("/members", members)
   .route("/workspaces", workspaces)
@@ -17,4 +17,4 @@ export const POST = handle(app)
 export const PATCH = handle(app)
 export const DELETE = handle(app)
 
-export type AppType = typeof routes
+export type AppType = typeof route
