@@ -21,10 +21,6 @@ export default async function WorkspaceIdSettingsPage({
     workspaceId: params.workspaceId
   })) as Workspace
 
-  if (!initialValues) {
-    redirect(`/workspaces/${params.workspaceId}`)
-  }
-
   return (
     <div className="w-full lg:max-w-xl">
       <EditWorkspaceForm initialValues={initialValues} />
