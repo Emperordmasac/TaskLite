@@ -9,9 +9,6 @@ import { sessionMiddleware } from '@/lib/session-middleware'
 import { createProjectSchema, updateProjectSchema } from '../lib/schema'
 import { Project } from '../lib/types'
 
-
-
-
 const app = new Hono()
   .get(
     '/', 

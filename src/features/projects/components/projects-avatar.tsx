@@ -19,10 +19,18 @@ export function ProjectAvatar({
 }: ProjectAvatarProps) {
   if (image) {
     return (
-      <div
-        className={cn("size-5 relative rounded-md overflow-hidden", className)}
-      >
-        <Image src={image} alt={name} fill className="object-cover" />
+      <div className="flex items-center gap-x-2">
+        <div
+          className={cn(
+            "size-5 relative rounded-md overflow-hidden",
+            className
+          )}
+        >
+          <Image src={image} alt={name} fill className="object-cover" />
+        </div>
+        <div className="text-neutral-500 font-semibold text-sm uppercase rounded-md">
+          {name}
+        </div>
       </div>
     )
   }
