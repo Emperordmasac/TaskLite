@@ -38,7 +38,7 @@ export default function Projects() {
           <Link key={project.$id} href={href}>
             <div
               className={cn(
-                "flex items-center gap-2.5 rounded-md hover:opacity-75 transition cursor-pointer text-neutral-500",
+                "flex items-center gap-2.5 p-2 rounded-md hover:opacity-75 transition cursor-pointer text-neutral-500",
                 isActive && "bg-white shadow-sm hover:opacity-100 text-primary"
               )}
             >

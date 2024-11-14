@@ -30,9 +30,6 @@ export function MemberAvatar({
           {name.charAt(0).toUpperCase()}
         </AvatarFallback>
       </Avatar>
-      <div className="text-neutral-500 font-semibold text-sm uppercase rounded-md">
-        {name}
-      </div>
     </div>
   )
 }

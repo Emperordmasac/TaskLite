@@ -9,7 +9,7 @@ import { createTaskSchema } from '@/features/tasks/lib/schemas';
 import { createAdminClient } from '@/lib/appwrite';
 import { DATABASE_ID, MEMBERS_ID, PROJECTS_ID, TASKS_ID } from '@/config';
 import { sessionMiddleware } from '@/lib/session-middleware';
-import { TaskStatus } from '../lib/types';
+import { Task, TaskStatus } from '../lib/types';
 import { Project } from '@/features/projects/lib/types';
 
 const app = new Hono()
@@ -54,32 +54,27 @@ const app = new Hono()
       ]
 
       if ( projectId ) {
-        console.log("🚀 ~ projectId:", projectId)
         query.push(Query.equal('projectId', projectId))
       }
 
       if ( asigneeId ) {
-        console.log("🚀 ~ asigneeId:", asigneeId)
         query.push(Query.equal('assigneeId', asigneeId))
       }
  
       if ( status ) {
-        console.log("🚀 ~ status:", status)
         query.push(Query.equal('status', status))
       }
 
       if ( search ) {
-        console.log("🚀 ~ search:", search)
         query.push(Query.search('name', search))
       }
 
       if ( dueDate ) {
-        console.log("🚀 ~ dueDate:", dueDate)
         query.push(Query.equal('dueDate', dueDate))
       }
 
 
-      const tasks = await databases.listDocuments(
+      const tasks = await databases.listDocuments<Task>(
         DATABASE_ID,
         TASKS_ID,
         query
@@ -115,12 +110,12 @@ const app = new Hono()
       const populatedTasks = tasks.documents.map((task) => {
         const project = projects.documents.find((project) => project.$id === task.projectId)
 
-        const asignee = asignees.find((asignee) => asignee.$id === task.assigneeId)
+        const assignee = asignees.find((asignee) => asignee.$id === task.assigneeId)
 
         return {
           ...task,
           project,
-          asignee
+          assignee
         }
       })
 

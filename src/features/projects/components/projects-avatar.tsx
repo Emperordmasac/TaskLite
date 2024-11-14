@@ -28,9 +28,6 @@ export function ProjectAvatar({
         >
           <Image src={image} alt={name} fill className="object-cover" />
         </div>
-        <div className="text-neutral-500 font-semibold text-sm uppercase rounded-md">
-          {name}
-        </div>
       </div>
     )
   }

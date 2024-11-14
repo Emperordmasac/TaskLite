@@ -134,6 +134,7 @@ export function CreateTaskForm({
                                 name={member.name}
                                 className="size-6"
                               />
+                              <span className="truncate">{member.name}</span>
                             </div>
                           </SelectItem>
                         ))}
@@ -196,6 +197,7 @@ export function CreateTaskForm({
                                 className="size-6"
                                 image={project.imageUrl}
                               />
+                              <span className="truncate">{project.name}</span>
                             </div>
                           </SelectItem>
                         ))}

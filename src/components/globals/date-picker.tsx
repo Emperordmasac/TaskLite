@@ -32,7 +32,7 @@ export default function DatePicker({
           variant="outline"
           size="lg"
           className={cn(
-            "w-full justify-start text-left font-normal px-3",
+            "w-full justify-start text-left font-normal px-3 placeholder:text-primary",
             !value && "text-primary-foreground",
             className
           )}
