@@ -16,11 +16,11 @@ import DatePicker from "@/components/globals/date-picker"
 import { TaskStatus } from "../lib/types"
 import { useTaskFilters } from "../hooks/use-task-filters"
 
-interface DataFilterProps {
-  hideProjectFilter?: boolean
-}
+// interface DataFilterProps {
+//   hideProjectFilter?: boolean
+// }
 
-export default function DataFilters({ hideProjectFilter }: DataFilterProps) {
+export default function DataFilters() {
   const workspaceId = useWorkspaceId()
 
   const { data: members, isLoading: isLoadingMembers } = useGetMembers({
