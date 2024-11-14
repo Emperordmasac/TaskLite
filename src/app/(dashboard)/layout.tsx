@@ -3,6 +3,7 @@ import { Navbar } from "@/components/globals/navbar"
 import { CreateTaskModal } from "@/features/tasks/components/create-task-modal"
 import { CreateProjectModal } from "@/features/projects/components/create-project-modal"
 import { CreateWorkspaceModal } from "@/features/workspaces/components/create-workspace-modal"
+import { UpdateTaskModal } from "@/features/tasks/components/update-task-modal"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -14,6 +15,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
       <CreateWorkspaceModal />
       <CreateProjectModal />
       <CreateTaskModal />
+      <UpdateTaskModal />
       <div className="w-full h-full flex">
         <div className="fixed left-0 top-0 hidden lg:block lg:w-[264px] h-full overflow-y-auto">
           <Sidebar />
