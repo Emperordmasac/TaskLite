@@ -9,7 +9,7 @@ export const UpdateTaskModal = () => {
   const { taskId, onClose } = useUpdateTaskModal()
 
   return (
-    <ResponsiveModal open={!!taskId} onOpenChange={close}>
+    <ResponsiveModal open={!!taskId} onOpenChange={onClose}>
       {taskId && <UpdateTaskFormWrapper id={taskId} onCancel={onClose} />}
     </ResponsiveModal>
   )
