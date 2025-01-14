@@ -16,11 +16,11 @@ import DatePicker from "@/components/globals/date-picker"
 import { TaskStatus } from "../lib/types"
 import { useTaskFilters } from "../hooks/use-task-filters"
 
-// interface DataFilterProps {
-//   hideProjectFilter?: boolean
-// }
+interface DataFiltersProps {
+  hideProjectFilter?: boolean
+}
 
-export default function DataFilters() {
+export default function DataFilters({ hideProjectFilter }: DataFiltersProps) {
   const workspaceId = useWorkspaceId()
 
   const { data: members, isLoading: isLoadingMembers } = useGetMembers({
@@ -105,28 +105,30 @@ export default function DataFilters() {
           ))}
         </SelectContent>
       </Select>
-      <Select
-        defaultValue={projectId ?? undefined}
-        onValueChange={(value) => {
-          onProjectChange(value)
-        }}
-      >
-        <SelectTrigger className="w-full lg:w-auto h-8">
-          <div className="flex items-center pr-2">
-            <FolderIcon className="size-4 mr-2" />
-            <SelectValue placeholder="All projects" />
-          </div>
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="all">All projects</SelectItem>
-          <SelectSeparator />
-          {projectOptions?.map((project) => (
-            <SelectItem key={project.value} value={project.value}>
-              {project.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      {!hideProjectFilter && (
+        <Select
+          defaultValue={projectId ?? undefined}
+          onValueChange={(value) => {
+            onProjectChange(value)
+          }}
+        >
+          <SelectTrigger className="w-full lg:w-auto h-8">
+            <div className="flex items-center pr-2">
+              <FolderIcon className="size-4 mr-2" />
+              <SelectValue placeholder="All projects" />
+            </div>
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All projects</SelectItem>
+            <SelectSeparator />
+            {projectOptions?.map((project) => (
+              <SelectItem key={project.value} value={project.value}>
+                {project.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      )}
       <DatePicker
         placeholder="Due date"
         className="h-8 w-full lg:w-auto"
