@@ -28,6 +28,8 @@ import { Button } from "@/components/ui/button"
 import { useRegister } from "../hooks/use-register"
 import { DottedSeparator } from "@/components/globals/dotted-separators"
 
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth"
+
 export const SignUpCard = () => {
   const { mutate, isPending } = useRegister()
 
@@ -140,6 +142,7 @@ export const SignUpCard = () => {
         <Button
           variant="secondary"
           disabled={isPending}
+          onClick={() => signUpWithGoogle()}
           size="lg"
           className="w-full"
         >
@@ -149,6 +152,7 @@ export const SignUpCard = () => {
         <Button
           variant="secondary"
           disabled={isPending}
+          onClick={() => signUpWithGithub()}
           size="lg"
           className="w-full"
         >
