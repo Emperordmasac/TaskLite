@@ -352,9 +352,9 @@ const app = new Hono()
         [
           Query.equal('projectId', projectId),
           Query.notEqual('status', TaskStatus.DONE),
-          Query.lessThan('$dueDate', now.toISOString()),
-          Query.greaterThanEqual('$dueDate', lastMonthStart.toISOString()),
-          Query.lessThanEqual('$dueDate', lastMonthEnd.toISOString())
+          Query.lessThan('dueDate', now.toISOString()),
+          Query.greaterThanEqual('dueDate', lastMonthStart.toISOString()),
+          Query.lessThanEqual('dueDate', lastMonthEnd.toISOString())
         ]
       )
 
@@ -364,9 +364,9 @@ const app = new Hono()
         [
           Query.equal('projectId', projectId),
           Query.notEqual('status', TaskStatus.DONE),
-          Query.lessThan('$dueDate', now.toISOString()),
-          Query.greaterThanEqual('$dueDate', lastMonthStart.toISOString()),
-          Query.lessThanEqual('$dueDate', lastMonthEnd.toISOString())
+          Query.lessThan('dueDate', now.toISOString()),
+          Query.greaterThanEqual('dueDate', lastMonthStart.toISOString()),
+          Query.lessThanEqual('dueDate', lastMonthEnd.toISOString())
         ]
       )
 
