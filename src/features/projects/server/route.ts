@@ -37,7 +37,7 @@ const app = new Hono()
       return c.json({error: 'Unauthorized'}, 401)
     }
 
-    const projects = await databases.listDocuments(
+    const projects = await databases.listDocuments<Project>(
       DATABASE_ID,
       PROJECTS_ID,
       [
@@ -56,7 +56,12 @@ const app = new Hono()
       const databases = c.get('databases')
       const {projectId} = c.req.param();
 
-      const project = await databases.getDocument<Project>(DATABASE_ID, PROJECTS_ID, projectId)
+      const project = await databases.getDocument<Project>(
+        DATABASE_ID,
+        PROJECTS_ID, 
+        projectId
+      )
+
       const member = await getMember({
         databases, 
         workspaceId: project.workspaceId, 
