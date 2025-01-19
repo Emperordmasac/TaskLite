@@ -23,6 +23,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { signInSchema } from "@/features/auth/lib/schema"
 import { useLogin } from "@/features/auth/hooks/use-login"
 
+import { signUpWithGithub } from "@/lib/oauth"
+
 export const SignInCard = () => {
   const { mutate, isPending } = useLogin()
 
@@ -115,6 +117,7 @@ export const SignInCard = () => {
         </Button>
         <Button
           variant="secondary"
+          onClick={signUpWithGithub}
           disabled={isPending}
           size="lg"
           className="w-full"
