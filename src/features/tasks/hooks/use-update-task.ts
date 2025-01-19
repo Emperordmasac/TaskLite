@@ -1,4 +1,4 @@
-import { toast } from 'sonner';
+ import { toast } from 'sonner';
 import { InferRequestType, InferResponseType } from 'hono';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 
@@ -23,6 +23,8 @@ export const useUpdateTask = () => {
     onSuccess: ({ data }) => {
       toast.success('Task updated')
       queryClient.invalidateQueries({ queryKey: ['tasks'] })
+      queryClient.invalidateQueries({ queryKey: ['project-analytics'] })
+      queryClient.invalidateQueries({ queryKey: ['workspace-analytics'] })
       queryClient.invalidateQueries({ queryKey: ['task', data.$id] })
     },
     onError: () => {
