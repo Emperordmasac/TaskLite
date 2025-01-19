@@ -117,7 +117,7 @@ export const SignInCard = () => {
         </Button>
         <Button
           variant="secondary"
-          onClick={signUpWithGithub}
+          onClick={() => signUpWithGithub()}
           disabled={isPending}
           size="lg"
           className="w-full"
