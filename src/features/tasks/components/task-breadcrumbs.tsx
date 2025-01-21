@@ -33,7 +33,7 @@ export const TaskBreadCrumbs = ({ project, task }: TaskBreadCrumbsProps) => {
       { param: { taskId: task.$id } },
       {
         onSuccess: () => {
-          router.push(`/workspaces/${workspaceId}/tasks`)
+          router.push(`/dashboard/workspaces/${workspaceId}/tasks`)
         }
       }
     )
@@ -47,7 +47,9 @@ export const TaskBreadCrumbs = ({ project, task }: TaskBreadCrumbsProps) => {
         image={project.imgeUrl}
         className="size-6 lg:size-8"
       />
-      <Link href={`/workspaces/${workspaceId}/projects/${project.$id}`}>
+      <Link
+        href={`/dashboard/workspaces/${workspaceId}/projects/${project.$id}`}
+      >
         <p className="text-sm lg:text-lg font-semibold text-muted-foreground hover:opacity-75 transition">
           {project.name}
         </p>

@@ -7,7 +7,7 @@ import { QueryProvider } from "@/providers/query-provider"
 import { Toaster } from "@/components/ui/sonner"
 
 import "./globals.css"
-import { Suspense } from 'react'
+import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 

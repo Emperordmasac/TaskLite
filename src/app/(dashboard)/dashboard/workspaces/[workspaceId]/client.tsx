@@ -88,7 +88,9 @@ export const TaskList = ({ data, total }: TaskListProps) => {
         <ul className="flex flex-col gap-y-4">
           {data.map((task) => (
             <li key={task.$id}>
-              <Link href={`/workspaces/${workspaceId}/tasks/${task.$id}`}>
+              <Link
+                href={`/dashboard/workspaces/${workspaceId}/tasks/${task.$id}`}
+              >
                 <Card className="shadow-none rounded-lg hover:opacity-75 transition">
                   <CardContent className="p-4">
                     <p className="tex-lg font-medium truncate">{task.name}</p>
@@ -112,7 +114,9 @@ export const TaskList = ({ data, total }: TaskListProps) => {
           </li>
         </ul>
         <Button variant="muted" className="mt-4 w-full" asChild>
-          <Link href={`/workspaces/${workspaceId}/tasks`}>Show All</Link>
+          <Link href={`/dashboard/workspaces/${workspaceId}/tasks`}>
+            Show All
+          </Link>
         </Button>
       </div>
     </div>
@@ -146,7 +150,9 @@ export const ProjectList = ({ data, total }: ProjectListProps) => {
         <ul className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {data.map((project) => (
             <li key={project.$id}>
-              <Link href={`/workspaces/${workspaceId}/projects/${project.$id}`}>
+              <Link
+                href={`/dashboard/workspaces/${workspaceId}/projects/${project.$id}`}
+              >
                 <Card className="shadow-none rounded-lg hover:opacity-75 transition">
                   <CardContent className="p-4 flex items-center gap-x-[2.5px]">
                     <ProjectAvatar
@@ -186,7 +192,7 @@ export const MemberList = ({ data, total }: MemberListProps) => {
         <div className="flex items-center justify-between">
           <p className="text-lg font-semibold">Members ({total})</p>
           <Button variant="secondary" size="icon" asChild>
-            <Link href={`/workspaces/${workspaceId}/members`}>
+            <Link href={`/dashboard/workspaces/${workspaceId}/members`}>
               <SettingsIcon className="w-4 h-4 text-neutral-400" />
             </Link>
           </Button>

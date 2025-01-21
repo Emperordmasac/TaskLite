@@ -20,14 +20,17 @@ const buttonVariants = cva(
           "border-transparent shadow-none hover:bg-accent hover:text-accent-foreground",
         muted: "bg-neutral-200 text-neutral-600 hover:bg-neutral-200/80",
         teritary:
-          "bg-blue-100 text-blue-600 hover:bg-blue-200 border-transparent shadow-none"
+          "bg-blue-100 text-blue-600 hover:bg-blue-200 border-transparent shadow-none",
+        landing: "bg-[#654cdc] text-[#f2f4f6]",
+        landingSecondary: "bg-[#fff] text-[#000]"
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-8 rounded-md px-3",
         xs: "h-7 rounded-md px-2 text-xs",
         lg: "h-12 rounded-md px-8",
-        icon: "h-8 w-8"
+        icon: "h-8 w-8",
+        landing: "h-[50px] rounded-[12px] px-8"
       }
     },
     defaultVariants: {

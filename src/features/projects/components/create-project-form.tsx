@@ -60,7 +60,7 @@ export function CreateProjectForm({ onCancel }: createProjectFormProps) {
         onSuccess: ({ data }) => {
           createProjectForm.reset()
           // onCancel?.()
-          window.location.href = `/workspaces/${workspaceId}/projects/${data.$id}`
+          window.location.href = `/dashboard/workspaces/${workspaceId}/projects/${data.$id}`
         }
       }
     )
