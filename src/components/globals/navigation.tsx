@@ -16,25 +16,25 @@ import { usePathname } from "next/navigation"
 const routes = [
   {
     label: "Home",
-    href: "",
+    href: "/dashboard",
     icon: GoHome,
     activeIcon: GoHomeFill
   },
   {
     label: "My Tasks",
-    href: "/tasks",
+    href: "/dashboard/tasks",
     icon: GoCheckCircle,
     activeIcon: GoCheckCircleFill
   },
   {
     label: "Settings",
-    href: "/settings",
+    href: "/dashboard/settings",
     icon: SettingsIcon,
     activeIcon: SettingsIcon
   },
   {
     label: "Members",
-    href: "/members",
+    href: "/dashboard/members",
     icon: UsersIcon,
     activeIcon: UsersIcon
   }
@@ -47,7 +47,7 @@ export const Navigation = () => {
   return (
     <ul className="flex flex-col">
       {routes.map((item) => {
-        const fullHref = `/workspaces/${workspaceId}${item.href}`
+        const fullHref = `/dashboard/workspaces/${workspaceId}${item.href}`
         const isActive = pathname === fullHref
         const Icon = isActive ? item.activeIcon : item.icon
 
