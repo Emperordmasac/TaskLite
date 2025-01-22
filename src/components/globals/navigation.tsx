@@ -47,7 +47,10 @@ export const Navigation = () => {
   return (
     <ul className="flex flex-col">
       {routes.map((item) => {
-        const fullHref = `/dashboard/workspaces/${workspaceId}${item.href}`
+        const fullHref =
+          item.label === "Settings"
+            ? `/workspaces/${workspaceId}${item.href}`
+            : `/dashboard/workspaces/${workspaceId}${item.href}`
         const isActive = pathname === fullHref
         const Icon = isActive ? item.activeIcon : item.icon
 
