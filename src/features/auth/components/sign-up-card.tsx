@@ -125,11 +125,16 @@ export const SignUpCard = () => {
                 </FormItem>
               )}
             />
-            <Button disabled={isPending} size="lg" className="w-full">
+            <Button
+              variant="landing"
+              disabled={isPending}
+              size="lg"
+              className="w-full rounded-xl"
+            >
               {isPending ? (
                 <Loader2 className="size-4 animate-spin" />
               ) : (
-                "Login"
+                "Register"
               )}
             </Button>
           </form>
